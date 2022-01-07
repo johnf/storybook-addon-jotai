@@ -1,3 +1,16 @@
+# v0.0.3 (Fri Jan 07 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of github.com:johnf/storybook-addon-jotai into main ([@johnf](https://github.com/johnf))
+- Update README ([@johnf](https://github.com/johnf))
+
+#### Authors: 1
+
+- John Ferlito ([@johnf](https://github.com/johnf))
+
+---
+
 # v0.0.2 (Fri Jan 07 2022)
 
 #### ⚠️ Pushed to `main`
