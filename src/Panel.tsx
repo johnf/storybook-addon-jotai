@@ -21,7 +21,6 @@ export const Panel: React.FC<PanelProps> = (props) => {
       setCurrentValues(values);
     },
     [ATOMS_CHANGED]: (values) => {
-      console.error('A');
       setCurrentValues(values);
     },
   });

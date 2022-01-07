@@ -52,7 +52,6 @@ export const withJotai = makeDecorator({
 
     Object.entries(atoms).map(([key, atom] : [string, Atom<unknown>]) => set(atom, values[key]));
 
-    console.error('Sending RENDERED', values);
     channel.emit(EVENTS.RENDERED, values);
 
     return (
