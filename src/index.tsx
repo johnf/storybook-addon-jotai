@@ -16,11 +16,7 @@ type AtomHash = {
   [key: string]: Atom<unknown>;
 }
 
-interface WrapperProps {
-  atoms: AtomHash,
-}
-
-const Wrapper: React.FC<WrapperProps> = ({ atoms, children }) => {
+const Wrapper = ({ atoms, children } : { atoms: AtomHash, children: any } ) => {
   const channel = addons.getChannel();
 
   const useAtoms : AtomHash = {};
