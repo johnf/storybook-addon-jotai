@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-jotai",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A storybook addon that allows you to use components in your stories that rely on jotai atoms and see internal Jotai state in a panel.",
   "keywords": [
     "storybook-addons",
