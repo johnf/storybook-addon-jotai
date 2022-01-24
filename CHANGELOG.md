@@ -1,3 +1,15 @@
+# v0.0.4 (Mon Jan 24 2022)
+
+#### ⚠️ Pushed to `main`
+
+- upgrade node modules ([@johnf](https://github.com/johnf))
+
+#### Authors: 1
+
+- John Ferlito ([@johnf](https://github.com/johnf))
+
+---
+
 # v0.0.3 (Fri Jan 07 2022)
 
 #### ⚠️ Pushed to `main`
