@@ -49,7 +49,7 @@ export const User = () => {
 };
 ```
 
-You an write a story as like
+You can write a story as
 
 ```tsx
 import { withJotai } from 'storybook-addon-jotai';
