@@ -1,3 +1,16 @@
+# v0.0.5 (Sun Feb 27 2022)
+
+#### ⚠️ Pushed to `main`
+
+- UPdate node modules ([@johnf](https://github.com/johnf))
+- Fix typos in README.md ([@johnf](https://github.com/johnf))
+
+#### Authors: 1
+
+- John Ferlito ([@johnf](https://github.com/johnf))
+
+---
+
 # v0.0.4 (Mon Jan 24 2022)
 
 #### ⚠️ Pushed to `main`
