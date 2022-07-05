@@ -1,3 +1,15 @@
+# v0.0.6 (Tue Jul 05 2022)
+
+#### 🐛 Bug Fix
+
+- Allow React 18 peer dependency [#7](https://github.com/johnf/storybook-addon-jotai/pull/7) ([@mshick](https://github.com/mshick))
+
+#### Authors: 1
+
+- Michael Shick ([@mshick](https://github.com/mshick))
+
+---
+
 # v0.0.5 (Sun Feb 27 2022)
 
 #### ⚠️ Pushed to `main`
