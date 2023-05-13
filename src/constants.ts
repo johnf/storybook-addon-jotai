@@ -1,5 +1,5 @@
 import { atom } from "jotai";
-import type { Atom } from "jotai";
+import type { WritableAtom } from "jotai";
 
 export const ADDON_ID = "storybook/jotai-addon";
 export const PANEL_ID = `${ADDON_ID}/panel`;
@@ -10,10 +10,13 @@ export const EVENTS = {
   RENDERED: `${ADDON_ID}/rendered`,
 };
 
+export type AnyWritableAtom = WritableAtom<unknown, any[], any>;
+export type InitialValues = (readonly [AnyWritableAtom, unknown])[];
+
 export const createInitialValues = () => {
-  const initialValues: (readonly [Atom<unknown>, unknown])[] = []
+  const initialValues: InitialValues = []
   const get = () => initialValues
-  const set = <Value>(anAtom: Atom<Value>, value: Value) => {
+  const set = <Value>(anAtom: AnyWritableAtom, value: Value) => {
     initialValues.push([anAtom, value])
   }
   return { get, set }

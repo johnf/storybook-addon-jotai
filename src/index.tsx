@@ -3,30 +3,38 @@ if (module && module.hot && module.hot.decline) {
 }
 
 import { EVENTS, createInitialValues } from './constants';
+import type { AnyWritableAtom, InitialValues } from './constants';
 
 import React, { useEffect } from 'react';
 
-import { Provider } from "jotai";
-import { useAtomValue } from "jotai/utils";
-import type { Atom } from "jotai";
+import { Provider, useAtomValue } from "jotai";
+import { useHydrateAtoms } from 'jotai/utils'
 
 import addons, { makeDecorator } from '@storybook/addons';
 
 type AtomHash = {
-  [key: string]: Atom<unknown>;
+  [key: string]: AnyWritableAtom;
 }
 
 const Wrapper = ({ atoms, children } : { atoms: AtomHash, children: any } ) => {
   const channel = addons.getChannel();
 
   const useAtoms : AtomHash = {};
-  Object.entries(atoms).forEach(([key, value] : [string, Atom<unknown>]) => { useAtoms[key] = useAtomValue(value) as any; });
+  Object.entries(atoms).forEach(([key, value] : [string, AnyWritableAtom]) => { useAtoms[key] = useAtomValue(value) as any; });
   const atomValues = Object.values(atoms);
 
   useEffect(() => {
     channel.emit(EVENTS.ATOMS_CHANGED, useAtoms);
   }, [atoms, useAtoms, atomValues]);
 
+  return children;
+};
+
+const HydrateAtoms = ({ initialValues, children }: {
+  initialValues: InitialValues,
+  children: any,
+}) => {
+  useHydrateAtoms(initialValues);
   return children;
 };
 
@@ -46,15 +54,17 @@ export const withJotai = makeDecorator({
 
     const { atoms, values } = parameters;
 
-    Object.entries(atoms).map(([key, atom] : [string, Atom<unknown>]) => set(atom, values[key]));
+    Object.entries(atoms).map(([key, atom] : [string, AnyWritableAtom]) => set(atom, values[key]));
 
     channel.emit(EVENTS.RENDERED, values);
 
     return (
-      <Provider initialValues={get()}>
-        <Wrapper atoms={atoms}>
-          {storyFn(context)}
-        </Wrapper>
+      <Provider>
+        <HydrateAtoms initialValues={get()}>
+          <Wrapper atoms={atoms}>
+            {storyFn(context)}
+          </Wrapper>
+        </HydrateAtoms>
       </Provider>
     );
   }

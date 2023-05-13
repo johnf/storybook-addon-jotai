@@ -50,7 +50,7 @@
     "boxen": "^6.2.1",
     "concurrently": "^7.0.0",
     "dedent": "^0.7.0",
-    "jotai": "^1.5.0",
+    "jotai": "^2.1.0",
     "prettier": "^2.3.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
@@ -64,7 +64,7 @@
     "@storybook/components": "^6.4.0",
     "@storybook/core-events": "^6.4.0",
     "@storybook/theming": "^6.4.0",
-    "jotai": "^1.0.0",
+    "jotai": "^2.0.0",
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
